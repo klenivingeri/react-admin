@@ -1,0 +1,59 @@
+.table-ork th,
+.table-ork td {
+  padding: 0.1rem !important;
+  vertical-align: middle !important;
+}
+
+.table-ork th {
+  font-weight: bold;
+}
+
+.table-ork td label {
+  display: inline-block;
+  margin-bottom: 0.1rem;
+}
+
+.table-ork .col-metric-low { background-color:#f9dfda; }
+.table-ork .col-metric-target { background-color:#c0e1c0; }
+.table-ork .col-metric-high { background-color:#e3eff9; }
+
+.bgc-priority-0 { background-color: #ffcccc; }
+.bgc-priority-10 { background-color: #ff8080; }
+.bgc-priority-20 { background-color: #ffcc99; }
+.bgc-priority-30 { background-color: #ffa64d; }
+.bgc-priority-40 { background-color: #ff8000; }
+.bgc-priority-50 { background-color: #ffeb99; }
+.bgc-priority-60 { background-color: #ffdb4d; }
+.bgc-priority-70 { background-color: #ffcc00; }
+.bgc-priority-80 { background-color: #00b300; }
+.bgc-priority-90 { background-color: #009900; }
+.bgc-priority-100 { background-color: #008000; }
+
+.btn-outline-white {
+  color: white;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.btn-h-outline-white:hover {
+  border-color: transparent;
+  background-color: white;
+}
+
+.btn-h-text-blue:hover {
+  background-color: white;
+  color: #2573b3;
+}
+
+.btn-a-outline-white:active {
+  border-color: white;
+}
+
+.irs--round .irs-bar { background: transparent; }
+.irs--round .irs-line { background: linear-gradient(90deg, yellow, green); }
+/*
+.irs--round .irs-line {
+  background: linear-gradient(to right, red 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
+}
+.irs { background: linear-gradient(90deg, red, green); }
+*/

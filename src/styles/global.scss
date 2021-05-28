@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white:#FFFFFF;
+
+    --gray-50: #F7FAFC;
+    --gray-100: #EDF2F7;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E0;
+    --gray-400: #A0AEC0;
+    --gray-500: #718096;
+    --gray-600: #4A5568;
+    --gray-700: #2D3748;
+    --gray-800: #1A202C;
+    --gray-900: #171923;
+
+    --blue-50: #EBF8FF;
+    --blue-500: #3182CE;
+    --orange-100: #FEEBC8;
+}
+
+@media(max-width: 1080px){
+    html{
+        font-size: 93.75%;
+    }
+}
+@media(max-width: 720){
+    html{
+        font-size: 87.5%;
+    }
+}
+body{
+    background: var(--gray-100);
+    color: var(--gray-900)
+}
+body, input, textarea, select, button{
+    font: 400 1rem "Roboto", sans-serif;
+}
+
+button{
+    cursor:pointer;
+}
+a{
+    color: inherit ;/*assume a cor do elemento pai*/
+    text-decoration:none;
+}
+
+/*
+media para acessibilidade
+font padrão 16 px;
+cal = 16*0,9375
+*/
