@@ -4,7 +4,7 @@ import { Logo } from './Logo'
 import { ButtonBurge } from './ButtonBurge'
 import { Selection } from './Selection'
 import { Perfil } from './Perfil'
-import { Bell } from './Bell/Bell'
+import { Bell } from './bell/Bell'
 
 
 export function Header(){

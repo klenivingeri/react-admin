@@ -7,7 +7,7 @@ export function ButtonBurge(){
                 align-self-center 
                 ml-2 
                 ">
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
         </button>
     )
 }

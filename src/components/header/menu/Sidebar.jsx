@@ -48,6 +48,7 @@ export function Sidebar(){
           
           <div class="dropdown mr-1">
             <a className="
+            btn
             p-2 
             Hovereffect
             d-flex align-items-center 
@@ -66,6 +67,7 @@ export function Sidebar(){
 
           <div class="dropdown mr-1">
           <a className="
+            btn
             p-2 
             Hovereffect 
             d-flex 

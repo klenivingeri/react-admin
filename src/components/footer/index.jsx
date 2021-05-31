@@ -8,7 +8,7 @@ export function Footer(){
                 <span className="Footer-me">me</span>
                 <span className="Footer-ly">ly</span>
                 <span className="Footer-ne">ne</span>
-                <span class="text-secondary text-50 ml-1 mt-1"> &copy; 2021</span>
+                <span className="text-secondary text-50 ml-1 mt-1"> &copy; 2021</span>
             </div>
 
 </div>  
