@@ -39,13 +39,10 @@ export function Bell(){
                   <span className="text-muted">See All Notifications</span>
                 </a>
               </div>
-            <div className="tab-pane fade p-0 m-0" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <AbaMessage />
+              <div className="tab-pane fade p-0 m-0" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <AbaMessage />
+              </div>
             </div>
-          </div>
-
-
-
           </div>
         </div>
       </>
