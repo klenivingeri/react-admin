@@ -1,4 +1,52 @@
-.jdv{
-    display: inline-block;
-    width: 5%;
+.accordion{
+    .jdv{
+        display: inline-block;
+        width: 5%;
+    }
+
+    margin-top:1px;
+
+    .text-table-true{
+        color:white; 
+    }
+    .text-table-false{
+        color:#3366BB;
+    }
+    .ac-poste{
+       border-radius: 0px;
+    }
+
+        
+    
+    
+    .cor1000{
+        background-color: #1D7A3E;
+    }
+    .cor900{
+        background-color:#269042;
+    }
+    .cor800{
+        background-color:#309642;
+    }
+    .cor750{
+        background-color:#EBC22E;
+    }
+    .cor700{
+        background-color:#F1D255;
+    }
+    .cor500{
+        background-color:#F7E498;
+    }
+    .cor400{
+        background-color:#D17832;
+    }
+    .cor300{
+        background-color:#DC9A55;
+    }
+    .cor100{
+        background-color: #CF767C;
+    }
+    .cor0{
+        background-color: #E8C3C7;
+    }
 }

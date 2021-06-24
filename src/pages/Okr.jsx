@@ -1,9 +1,11 @@
 import { Dashboard } from "../components/dashboard"
 import { Table } from "../components/table/Table"
+
 //var table  =  document.getElementById("tbody-id").children
 export default function Okr(){
 
     return(
+        <>
         <Dashboard>
 
             <form autoComplete="off">
@@ -59,9 +61,9 @@ export default function Okr(){
                     <th width="10%" className="text-center">Metric</th>
                     <th width="7%" >Status</th>
                     <td width="3%" className="text-right">
-                        <button  type="button"   className="btn btn-xs btn-outline-default btn-h-outline-white btn-h-text-blue btn-a-outline-white btn-bold btn-brc-tp">
+                        <a  type="button"   className="mr-2 collapsed">
                             <i className="fa fa-angle-up text-center"></i>
-                        </button>
+                        </a>
                     </td>
                     </tr>
                 </thead>
@@ -72,6 +74,6 @@ export default function Okr(){
         </Dashboard>
 
 
-        
+    </>
     )
 }
