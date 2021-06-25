@@ -1,9 +1,53 @@
+
 import { Dashboard } from "../components/dashboard"
 import { Table } from "../components/table/Table"
-
+import { useEffect } from "react";
 //var table  =  document.getElementById("tbody-id").children
 export default function Okr(){
+    var el = ''
+    var active = []
 
+    useEffect(()=>{
+
+        el = document.querySelectorAll(".toggle-accordionOKR")
+
+    },[]);
+
+    const  handleToggle = () => {
+
+        active = []
+
+        el.forEach( index => {
+
+            if(index.classList.contains('show')){
+
+                active.push(1);
+
+            }else{
+
+                active.push(0);
+            }
+        })
+        
+
+        toggleShow(active.reduce((total, currentElement) => total + currentElement))
+    }
+
+    const toggleShow = (checked) => {
+
+        el.forEach( index =>{
+
+            if(checked == 0 ){
+
+                index.classList.add('show')
+
+            } else{
+
+                index.classList.remove('show')
+            }
+        })
+    }
+    
     return(
         <>
         <Dashboard>
@@ -46,7 +90,7 @@ export default function Okr(){
 
                 </div>
             </form>
-            <table id="simple-table" className="mb-0 table table-borderless table-bordered-x brc-secondary-l3 text-dark-m2 radius-1 overflow-hidden table-ork">
+            <table id="simple-table1" className="mb-0 table table-borderless table-bordered-x brc-secondary-l3 text-dark-m2 radius-1 overflow-hidden table-ork">
                 <thead className="text-dark-tp3 bgc-grey-l4 text-80 border-b-1 brc-transparent">
                     <tr >
                     <th width="5%"className="d-sm-table-cell text-center">#</th>
@@ -61,7 +105,7 @@ export default function Okr(){
                     <th width="10%" className="text-center">Metric</th>
                     <th width="7%" >Status</th>
                     <td width="3%" className="text-right">
-                        <a  type="button"   className="mr-2 collapsed">
+                        <a  type="button" id="collapsed-total"  onClick={handleToggle} className="mr-2 collapsed">
                             <i className="fa fa-angle-up text-center"></i>
                         </a>
                     </td>

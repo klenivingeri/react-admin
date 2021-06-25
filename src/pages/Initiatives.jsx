@@ -1,3 +1,9 @@
+import { Dashboard } from "../components/dashboard"
+
 export default function Initiatives(){
-    return( <h1>Initiatives </h1>)
+    return( 
+        <Dashboard >
+
+        </Dashboard>
+    )
 }

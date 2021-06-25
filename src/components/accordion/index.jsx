@@ -2,24 +2,24 @@ import './styles.scss'
 
 
 export function Accordion(props){
-    let id = props.table.list.replaceAll('.', '')
+    let id = props?.table.list.replaceAll('.', '')
     let style = {type:'',priority:''}
     
-    if(props.table.type == 'DVR'){
+    if(props?.table.type == 'DVR'){
 
             style.type = 'bgc-primary-d3'
 
-    }else if(props.table.type == 'THM'){
+    }else if(props?.table.type == 'THM'){
 
         style.type = 'bgc-blue'
 
-    }else if(props.table.type == 'OKR'){
+    }else if(props?.table.type == 'OKR'){
 
         style.type = 'bgc-grey-l4'
 
     }
 
-    switch (props.table.priority) {
+    switch (props?.table.priority) {
         
 
     
@@ -40,7 +40,7 @@ export function Accordion(props){
                 >
                 
                 <table
-                    id="simple-table" 
+                    id="simple-table2" 
                     className="
                         mb-0 
                         table 
@@ -54,19 +54,19 @@ export function Accordion(props){
                     >
                     <tbody className="text-dark-tp3 text-80 border-b-1 brc-transparent">
                         <tr>
-                        <td width="5%" className={`d-sm-table-cell  pos-rel text-center text-table-${props.table.type != 'OKR'}`}>
+                        <td width="5%" className={`d-sm-table-cell  pos-rel text-center text-table-${props?.table.type != 'OKR'}`}>
                             <div class="position-tl h-100 ml-n1px border-l-4 brc-success-m1 v-active ac-poste" ></div>
-                            { props.table.list}</td>
+                            { props?.table.list}</td>
                         <td width="5%">
-                            <span className="badge bgc-white border-1 border-l-3 brc-success-m2 btn-text-success text-70">{props.table.type}</span>
+                            <span className="badge bgc-white border-1 border-l-3 brc-success-m2 btn-text-success text-70">{props?.table.type}</span>
                         </td>
-                        <td width="30%"  className={`text-table-${props.table.type != 'OKR'}`}>
+                        <td width="30%"  className={`text-table-${props?.table.type != 'OKR'}`}>
                             
-                            {props.table.title}</td>
+                            {props?.table.title}</td>
                         <td width="10%"></td>
                         <td width="10%"></td>
-                        <td width="5%" className={`d-none d-sm-table-cell text-center cor${props.table.priority}`}>
-                            {props.table.type ?  props.table.priority : '' }                 </td>
+                        <td width="5%" className={`d-none d-sm-table-cell text-center cor${props?.table.priority}`}>
+                            {props?.table.type ?  props?.table.priority : '' }                 </td>
                         <td width="5%"></td>
                         <td width="5%"></td>
                         <td width="5%"></td>
@@ -79,7 +79,7 @@ export function Accordion(props){
                                     aria-expanded="true" 
                                     aria-controls="collapseOne"
                                     data-target={'#collapse'+ id}>
-                            <i className={`fa  fa-angle-up text-center text-table-${props.table.type != 'OKR'} `}></i>  
+                            <i className={`fa  fa-angle-up text-center text-table-${props?.table.type != 'OKR'} `}></i>  
                                 
                             </a>
                 
@@ -89,9 +89,9 @@ export function Accordion(props){
                 </table>
             
             </div>
-            <div id={'collapse' + id} className=" collapse show" aria-labelledby={'heading' + id} data-parent={'#accordionExample'+ id}>
+            <div id={'collapse' + id} className={`toggle-accordion${props?.table.type} collapse show`} aria-labelledby={'heading' + id} data-parent={'#accordionExample'+ id}>
             
-                {props.children}
+                {props?.children}
         
             </div>
         </div>

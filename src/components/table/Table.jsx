@@ -1,3 +1,4 @@
+
 import { Accordion } from "../accordion";
 import { TableTr } from "./TableTr";
 
@@ -154,7 +155,7 @@ export function Table(){
                             
                             return(<Accordion key={data.list} table={data}>
                                     <table 
-                                    id="simple-table" 
+                                    id="simple-table3" 
                                     className="
                                         mb-0 
                                         table 
