@@ -7,7 +7,7 @@ export function Accordion(props){
     
     if(props?.table.type == 'DVR'){
 
-            style.type = 'bgc-primary-d3'
+        style.type = 'bgc-primary-d3'
 
     }else if(props?.table.type == 'THM'){
 
@@ -19,13 +19,6 @@ export function Accordion(props){
 
     }
 
-    switch (props?.table.priority) {
-        
-
-    
-        default:
-            break;
-    }
     return(
         <div className="accordion" id={'accordionExample'+ id}>
             
@@ -89,7 +82,7 @@ export function Accordion(props){
                 </table>
             
             </div>
-            <div id={'collapse' + id} className={`toggle-accordion${props?.table.type} collapse show`} aria-labelledby={'heading' + id} data-parent={'#accordionExample'+ id}>
+            <div id={'collapse' + id} className={`toggle-accordion collapse show`} aria-labelledby={'heading' + id} data-parent={'#accordionExample'+ id}>
             
                 {props?.children}
         

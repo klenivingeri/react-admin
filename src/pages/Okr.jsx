@@ -5,15 +5,25 @@ import { useEffect } from "react";
 //var table  =  document.getElementById("tbody-id").children
 export default function Okr(){
     var el = ''
+    var elthm = ''
     var active = []
+    
 
     useEffect(()=>{
 
-        el = document.querySelectorAll(".toggle-accordionOKR")
-
+        el = document.querySelectorAll(".toggle-accordion")
+        console.log(el)
     },[]);
 
+
     const  handleToggle = () => {
+        
+        active = toggleCheck(el)
+
+        toggleShow(active.reduce((total, currentElement) => total + currentElement))
+    }
+
+    const toggleCheck = () =>{
 
         active = []
 
@@ -28,17 +38,17 @@ export default function Okr(){
                 active.push(0);
             }
         })
-        
 
-        toggleShow(active.reduce((total, currentElement) => total + currentElement))
+        return active
+       
     }
 
     const toggleShow = (checked) => {
-
+       
         el.forEach( index =>{
 
             if(checked == 0 ){
-
+                
                 index.classList.add('show')
 
             } else{
