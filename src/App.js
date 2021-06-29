@@ -9,7 +9,9 @@ function App() {
 
     <BrowserRouter>
         <Header />
+        <div id="escopo">
         <Routes />
+        </div>
         <Footer />
     </BrowserRouter>
 

@@ -1,5 +1,5 @@
 
-import { Accordion } from "../accordion";
+import { Accordion } from ".";
 import { TableTr } from "./TableTr";
 
 export function Table(){
