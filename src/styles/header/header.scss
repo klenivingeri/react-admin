@@ -1,4 +1,9 @@
-
+.headerFloating{
+    top: 0px;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
 .Hovereffect{
     border-bottom: 3px solid var(--white);
     text-decoration: none;

@@ -1,0 +1,16 @@
+.asidebox{
+    width: 500px;
+    height: calc(100vh - 100%);
+    min-height: calc(100vh - 65px);
+    top: 65px;
+    right: 0px;
+    position: fixed;
+    box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.9);
+    .scroll{
+        height: 100%;
+        overflow-y: scroll;
+        position: relative;
+    }
+
+}
+

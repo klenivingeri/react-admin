@@ -7,9 +7,9 @@ import { Perfil } from './Perfil'
 import { Bell } from './Bell/Bell'
 
 
-export function Header(){
-    return(
-
+export function Header() {
+  return (
+    <div className="headerFloating">
       <nav className="container-fluid bg-white shadow-sm">
         <div className="row justify-content-between">
           <div className="col-7 d-flex justify-content-start align-items-center">
@@ -24,7 +24,6 @@ export function Header(){
           </div>
         </div>
       </nav>
-
-      
-    )
+    </div>
+  )
 }
