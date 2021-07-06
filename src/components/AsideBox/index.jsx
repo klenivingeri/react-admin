@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { Comments } from './comments'
 import { History } from './history'
 import { Overview } from './overview'
+import { Edit } from './edit'
 import { ShowContent } from './showContent'
 import './styles.scss'
 export function AsideBox() {
@@ -64,6 +65,11 @@ export function AsideBox() {
                                                 History
                                             </a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-3 bgc-h-primary-l4 radius-0 font-bolder" id="edit-tab-btn" data-toggle="tab" href="#edit" role="tab" aria-controls="more16" aria-selected="false">
+                                                Edit
+                                            </a>
+                                        </li>
 
                                     </ul>
 
@@ -80,6 +86,9 @@ export function AsideBox() {
 
                                             <ShowContent id="history">
                                                 <History />
+                                            </ShowContent>
+                                            <ShowContent id="edit">
+                                                <Edit />
                                             </ShowContent>
 
                                         </div>

@@ -1,3 +1,7 @@
+import { FormRange } from "../Form/FormRange";
+
+
+
 
 export function Overview() {
     return (
@@ -11,7 +15,6 @@ export function Overview() {
             <div class="row border-b-1 brc-dark-l3 ml-1 mr-1 mt-2">
                 <div class="col-sm-4 mb-2">Priotiry:</div>
                 <div class="col-sm-8 mb-2">
-                    <input type="text" id="id-ionslider-1" name="slider-1" value="" />
                 </div>
             </div>
             <div class="row border-b-1 brc-dark-l3 ml-1 mr-1 mt-2">

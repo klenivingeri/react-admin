@@ -25,5 +25,19 @@
         }
     }
 
+    .form-range{
+        display: flex;
+        align-items: center;
+    }
 
+    #form-edit-table{
+        label{
+            width: 60px;
+        }
+        .input-edit-table{
+            width: 200px;
+            height: 30px;
+        }
+    }
+    
 

@@ -1,23 +1,32 @@
+import { useEffect } from "react"
 
-export function TableTr(props){
-    var style = ''
-
-    if(props?.tr.status == 'Approved'){
+export function TableTr(props) {
+    let style = ''
+    let el = ''
+    if (props?.tr.status == 'Approved') {
         style = 'bgc-green-d1'
 
-    }else if(props?.tr.status == 'Review'){
+    } else if (props?.tr.status == 'Review') {
         style = 'bgc-info-d1'
     }
-    else if(props?.tr.status == 'Pending'){
+    else if (props?.tr.status == 'Pending') {
         style = 'bgc-warning-d1'
     }
-    else if(props?.tr.status == 'Rejected'){
+    else if (props?.tr.status == 'Rejected') {
         style = 'bgc-red-d1'
     }
 
-    return(
-        <tr className="bgc-h-yellow-l4 d-style">
-            <td width="5%"className=" text-center pr-0 pos-rel">
+    useEffect(() => {
+        el = document.getElementById("form-edit-table")
+    }, [])
+    function handleEdit() {
+        console.log(el)
+        console.log(props)
+    }
+
+    return (
+        <tr className="bgc-h-yellow-l4 d-style" onClick={handleEdit}>
+            <td width="5%" className=" text-center pr-0 pos-rel">
                 <div class="position-tl  h-100 ml-n1px border-l-4 brc-orange-m1 v-hover"></div>
                 <label>{props?.tr.list}</label>
             </td>
@@ -28,12 +37,12 @@ export function TableTr(props){
             <td width="10%">{props?.tr.owner}</td>
             <td width="5%" className={`d-none d-sm-table-cell text-center cor${props?.tr.priority}`}>{props?.tr.priority}</td>
             <td width="5%" className="col-metric-low text-center">{props?.tr.low}</td>
-            <td width="5%"className="col-metric-target text-center">{props?.tr.medium}</td>
+            <td width="5%" className="col-metric-target text-center">{props?.tr.medium}</td>
             <td width="5%" className="col-metric-high text-center">{props?.tr.high}</td>
             <td width="10%" className="text-center">{props?.tr.metric}</td>
             <td width="7%">
-            { props?.tr.status == 'Approved' ?? (<span className={`badge badge-sm bgc-green-d1 text-white pb-1 px-25`}>{props?.tr.status}</span>)}
-            
+                {props?.tr.status == 'Approved' ?? (<span className={`badge badge-sm bgc-green-d1 text-white pb-1 px-25`}>{props?.tr.status}</span>)}
+
                 <span className={`badge badge-sm  text-white pb-1 px-25 ${style}`}>{props?.tr.status}</span>
 
             </td>
