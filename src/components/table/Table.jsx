@@ -2,8 +2,8 @@
 import { Accordion } from ".";
 import { TableTr } from "./TableTr";
 
-export function Table(){
-    
+export function Table() {
+
 
     var obj = [{
         title: 'Base de Clientes - DVR',
@@ -17,8 +17,8 @@ export function Table(){
                 title: 'Base de Clientes - OKR',
                 type: 'OKR',
                 list: '1.1.1',
-                priority: '1000', 
-                kr:[{
+                priority: '1000',
+                kr: [{
                     list: '1.1.1.1',
                     type: 'KR',
                     goal: 'Base ativa de clientes recorrentes',
@@ -56,7 +56,7 @@ export function Table(){
                     high: '12,0',
                     metric: 'Padrão',
                     status: 'Pending'
-                },{
+                }, {
                     list: '1.1.1.4',
                     type: 'KR',
                     goal: 'Venda total Mobile Remoto',
@@ -71,7 +71,7 @@ export function Table(){
                 }]
             }]
         }]
-    },{
+    }, {
         title: 'Base de Clientes - DVR',
         type: 'DVR',
         list: '2',
@@ -82,9 +82,9 @@ export function Table(){
             okr: [{
                 title: 'Base de Clientes - OKR',
                 type: 'OKR',
-                list: '2.1.1', 
-                priority: '500',   
-                kr:[{
+                list: '2.1.1',
+                priority: '500',
+                kr: [{
                     list: '2.1.1.1',
                     type: 'KR',
                     goal: 'Base ativa de clientes recorrentes',
@@ -122,7 +122,7 @@ export function Table(){
                     high: '12,0',
                     metric: 'Padrão',
                     status: 'Pending'
-                },{
+                }, {
                     list: '2.1.1.4',
                     type: 'KR',
                     goal: 'Venda total Mobile Remoto',
@@ -137,7 +137,7 @@ export function Table(){
                 }]
             }]
         }]
-    },{
+    }, {
         title: 'Base de Clientes - DVR',
         type: 'DVR',
         list: '3',
@@ -148,9 +148,9 @@ export function Table(){
             okr: [{
                 title: 'Base de Clientes - OKR',
                 type: 'OKR',
-                list: '3.1.1', 
-                priority: '1000',   
-                kr:[{
+                list: '3.1.1',
+                priority: '1000',
+                kr: [{
                     list: '3.1.1.1',
                     type: 'KR',
                     goal: 'Base ativa de clientes recorrentes',
@@ -188,7 +188,7 @@ export function Table(){
                     high: '12,0',
                     metric: 'Padrão',
                     status: 'Pending'
-                },{
+                }, {
                     list: '3.1.1.4',
                     type: 'KR',
                     goal: 'Venda total Mobile Remoto',
@@ -204,25 +204,25 @@ export function Table(){
             }]
         }]
     }]
-    
-    return(
+
+    return (
         <>
-        {obj.map( data => { 
-            return (
-            
-            <Accordion key={data.list} table={data}>
-                
-                {data.thm.map (data => {
-                    return(
-                                            
+            {obj.map(data => {
+                return (
+
                     <Accordion key={data.list} table={data}>
-                    
-                        {data.okr.map( data => {
-                            
-                            return(<Accordion key={data.list} table={data}>
-                                    <table 
-                                    id="simple-table3" 
-                                    className="
+
+                        {data.thm.map(data => {
+                            return (
+
+                                <Accordion key={data.list} table={data}>
+
+                                    {data.okr.map(data => {
+
+                                        return (<Accordion key={data.list} table={data}>
+                                            <table
+                                                id="simple-table3"
+                                                className="
                                         mb-0 
                                         table 
                                         table-borderless 
@@ -232,33 +232,37 @@ export function Table(){
                                         radius-1 
                                         overflow-hidden 
                                         table-ork"
-                                    >
+                                            >
 
-                                    <tbody className="mt-1 text-80">
+                                                <tbody className="mt-1 text-80">
 
-                                        {data.kr.map( data => {
+                                                    {data.kr.map(data => {
 
-                                            return (
-                                                <TableTr key={data.list} tr={data} />
-                                            )}
+                                                        return (
+                                                            <TableTr key={data.list} tr={data} />
+                                                        )
+                                                    }
 
-                                        )}
+                                                    )}
 
-                                    </tbody>
+                                                </tbody>
 
-                                </table>
-                            </Accordion>   
-                            )} 
+                                            </table>
+                                        </Accordion>
+                                        )
+                                    }
+                                    )}
+
+                                </Accordion>
+                            )
+                        }
                         )}
-                    
-                    </Accordion>
-                    )}
-                )}
 
-            </Accordion>
+                    </Accordion>
+                )
+            }
             )}
-        )}
-         </>
-        
+        </>
+
     )
 }

@@ -1,13 +1,22 @@
 import './styles.scss'
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { FormRange } from '../Form/FormRange'
 
+
+import { GoalContext } from '../../contexts'
+
 export function Edit(props) {
+
+    const { getGoalEdit } = useContext(GoalContext)
+
+    getGoalEdit(1234)
 
     const [goal, setGoal] = useState('')
     const [range, setRange] = useState('')
     const [team, setTeam] = useState('')
     const [owner, setOwner] = useState('')
+
+
     console.log(goal)
     console.log(range)
     console.log(team)

@@ -1,11 +1,14 @@
 
-import Routes from './routes'
-import { Header } from './components/header'
-import { BrowserRouter } from 'react-router-dom'
-import { Footer } from './components/footer'
+import Routes from './routes';
+import { Header } from './components/header';
+import { BrowserRouter } from 'react-router-dom';
+import { Footer } from './components/footer';
 import { AsideBox } from './components/AsideBox';
 
-function App() {
+import { GoalContext } from './contexts'
+
+const App = () => {
+
   return (
 
     <BrowserRouter>
