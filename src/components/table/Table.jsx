@@ -1,6 +1,8 @@
 
+
 import { Accordion } from ".";
 import { TableTr } from "./TableTr";
+
 
 export function Table() {
 
@@ -204,6 +206,7 @@ export function Table() {
             }]
         }]
     }]
+
 
     return (
         <>

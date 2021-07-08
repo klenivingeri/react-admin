@@ -1,5 +1,5 @@
 import './styles.scss'
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { FormRange } from '../Form/FormRange'
 
 
@@ -7,39 +7,40 @@ import { GoalContext } from '../../contexts'
 
 export function Edit(props) {
 
-    const { getGoalEdit } = useContext(GoalContext)
+    const { getGoalEdit, goal } = useContext(GoalContext)
 
-    getGoalEdit(1234)
+    const [fgoal, setGoal] = useState('')
+    const [frange, setRange] = useState('')
+    const [fteam, setTeam] = useState('')
+    const [fowner, setOwner] = useState('')
 
-    const [goal, setGoal] = useState('')
-    const [range, setRange] = useState('')
-    const [team, setTeam] = useState('')
-    const [owner, setOwner] = useState('')
+    useEffect(() => {
+        setGoal(goal?.goal)
+        setRange(goal?.priority)
+        setTeam(goal?.type)
+        setOwner(goal?.owner)
+    }, [goal])
 
 
-    console.log(goal)
-    console.log(range)
-    console.log(team)
-    console.log(owner)
 
 
     return (
         <form id="form-edit-table">
             <div>
                 <label> Goal: </label>
-                <input type="text" className="input-edit-table" name="goal" onChange={event => setGoal(event.target.value)} />
+                <input type="text" className="input-edit-table" name="goal" value={fgoal} onChange={event => setGoal(event.target.value)} />
             </div>
             <div>
                 <label> Team: </label>
-                <input type="text" className="input-edit-table" name="team" onChange={event => setTeam(event.target.value)} />
+                <input type="text" className="input-edit-table" name="team" value={fteam} onChange={event => setTeam(event.target.value)} />
             </div>
             <div>
                 <label> Owner: </label>
-                <input type="text" className="input-edit-table" name="owner" onChange={event => setOwner(event.target.value)} />
+                <input type="text" className="input-edit-table" name="owner" value={fowner} onChange={event => setOwner(event.target.value)} />
             </div>
             <div className="form-range">
                 <label> Pryority: </label>
-                <FormRange setRange={setRange} />
+                <FormRange value={frange} />
             </div>
         </form>
     )

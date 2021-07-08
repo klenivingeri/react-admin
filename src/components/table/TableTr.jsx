@@ -1,8 +1,10 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from 'react'
+import { GoalContext } from '../../contexts'
+
+
 
 export function TableTr(props) {
     let style = ''
-    let el = ''
     if (props?.tr.status == 'Approved') {
         style = 'bgc-green-d1'
 
@@ -16,14 +18,24 @@ export function TableTr(props) {
         style = 'bgc-red-d1'
     }
 
-    useEffect(() => {
-        el = document.getElementById("form-edit-table")
-    }, [])
-    function handleEdit() {
-        console.log(el)
-        console.log(props)
-    }
+    let el = ''
 
+    useEffect(() => {
+        el = document.querySelector(".asidebox")
+
+    }, []);
+
+    const { getGoal } = useContext(GoalContext)
+
+    function handleEdit() {
+        const active = el.classList.contains('show')
+
+        if (active == false) {
+            el.classList.add('show')
+            console.log(active)
+        }
+        getGoal(props.tr)
+    }
     return (
         <tr className="bgc-h-yellow-l4 d-style" onClick={handleEdit}>
             <td width="5%" className=" text-center pr-0 pos-rel">
