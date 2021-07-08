@@ -19,20 +19,16 @@ export function TableTr(props) {
     }
 
     let el = ''
-
+    let active = true
+    const { getGoal, goal } = useContext(GoalContext)
     useEffect(() => {
         el = document.querySelector(".asidebox")
-
-    }, []);
-
-    const { getGoal } = useContext(GoalContext)
+        active = el.classList.contains('show')
+    });
 
     function handleEdit() {
-        const active = el.classList.contains('show')
-
-        if (active == false) {
+        if (!active) {
             el.classList.add('show')
-            console.log(active)
         }
         getGoal(props.tr)
     }
