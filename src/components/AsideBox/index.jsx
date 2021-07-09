@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { Comments } from './comments'
 import { History } from './history'
 import { Overview } from './overview'
@@ -7,12 +7,17 @@ import { Edit } from './edit'
 import { ShowContent } from './showContent'
 import './styles.scss'
 
+import { GoalContext } from '../../contexts'
+
 
 export function AsideBox() {
     let el = ''
+
+    const { goal } = useContext(GoalContext)
+
     useEffect(() => {
         el = document.querySelector(".asidebox")
-    }, []);
+    });
 
     function handleclose() {
         el.classList.remove('show')
@@ -26,7 +31,7 @@ export function AsideBox() {
                         <h5 class="flex-grow-1 text-blue-d1 text-120 py-3 ml-3 mb-0">
 
                             <span class="badge bgc-white border-1 border-l-3 mr-1 brc-success-m2 btn-text-success text-70">KR</span>
-                            Key Result
+                            {goal.goal}
 
                         </h5>
                         <a href="#" class="close m-0 border-l-1 brc-grey-m4" data-dismiss="modal" aria-label="Close" onClick={handleclose}>

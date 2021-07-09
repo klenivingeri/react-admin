@@ -4,6 +4,8 @@ import { GoalContext } from '../../contexts'
 
 
 export function TableTr(props) {
+    let id = props?.tr.list.replaceAll('.', '')
+
     let style = ''
     if (props?.tr.status == 'Approved') {
         style = 'bgc-green-d1'
@@ -30,10 +32,12 @@ export function TableTr(props) {
         if (!active) {
             el.classList.add('show')
         }
-        getGoal(props.tr)
+
+        getGoal(`${props.tr.type}${id}`)
+
     }
     return (
-        <tr className="bgc-h-yellow-l4 d-style" onClick={handleEdit}>
+        <tr id={`${props.tr.type}${id}`} className="bgc-h-yellow-l4 d-style" onClick={handleEdit} data-set={JSON.stringify(props.tr)}>
             <td width="5%" className=" text-center pr-0 pos-rel">
                 <div class="position-tl  h-100 ml-n1px border-l-4 brc-orange-m1 v-hover"></div>
                 <label>{props?.tr.list}</label>

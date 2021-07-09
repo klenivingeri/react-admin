@@ -12,7 +12,10 @@ export const GoalContextProvider = ({ children }) => {
     }
 
     const getGoal = (data) => {
-        setGoal(data)
+        let convert = JSON.parse(JSON.parse(JSON.stringify(document.getElementById(data).dataset)).set)
+        convert.list = data
+        setGoal(convert)
+
     }
 
     const goalProviderValue = {

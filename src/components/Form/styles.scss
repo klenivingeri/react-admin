@@ -2,10 +2,9 @@
     position: relative;
     
     &__input {
-      width: 200px;
+      width: 250px;
       background-image: linear-gradient(to right, yellow , green);
 
-      
       &::-moz-range-thumb {
         background: #ccc;
       }
