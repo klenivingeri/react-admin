@@ -1,6 +1,5 @@
 import './styles.scss'
 import { useState, useContext, useEffect } from "react"
-import '../Form/styles.scss'
 
 
 import { GoalContext } from '../../contexts'
@@ -64,29 +63,72 @@ export function Edit(props) {
             low,
             medium,
             high,
-            metric
+            metric,
+            status
         })
         
         tr.dataset.set = obj
+
+        let style = ''
+        if (status == 'Approved') {
+            style = 'bgc-green-d1'
+    
+        } else if (status == 'Review') {
+            style = 'bgc-info-d1'
+        }
+        else if (status == 'Pending') {
+            style = 'bgc-warning-d1'
+        }
+        else if (status == 'Rejected') {
+            style = 'bgc-red-d1'
+        }
+        
     }
+
 
 
     return (
         <>
+        <div >
             <form id="form-edit-table">
-                <div className="mb-1">
+                <div className="mb-2">
                     <label> Goal: </label>
                     <input type="text" className="input-edit-table" name="goal" value={goal} onChange={event => setGoal(event.target.value)} />
                 </div>
-                <div className="mb-1">
+                <div className="mb-2 pr-1 area">
                     <label> Team: </label>
                     <input type="text" className="input-edit-table" name="team" value={team} onChange={event => setTeam(event.target.value)} />
                 </div>
-                <div className="mb-1">
+                <div className="mb-2 area">
                     <label> Owner: </label>
                     <input type="text" className="input-edit-table" name="owner" value={owner} onChange={event => setOwner(event.target.value)} />
                 </div>
-                <div className="form-range mb-1">
+                <div className="mb-2 pr-1 area-goal">
+                    <label> 80%: </label>
+                    <input type="text" className="input-edit-table" name="low" value={low} onChange={event => setLow(event.target.value)} />
+                </div>
+                <div className="mb-2 pr-1 area-goal" area-goal>
+                    <label> 100%: </label>
+                    <input type="text" className="input-edit-table" name="medium" value={medium} onChange={event => setMedium(event.target.value)} />
+                </div>
+                <div className="mb-2 area-goal">
+                    <label> 120%: </label>
+                    <input type="text" className="input-edit-table" name="high" value={high} onChange={event => setHigh(event.target.value)} />
+                </div>
+                <div className="mb-2 area pr-1" >
+                    <label> Metric: </label>
+                    <input type="text" className="input-edit-table" name="metric" value={metric} onChange={event => setMetric(event.target.value)} />
+                </div>
+                <div className="mb-2 area">
+                    <label> Status: </label>
+                    <select name="select" className="select" value={status} onChange={event => setStatus(event.target.value)}>
+                        <option value="Approved">Approved</option>
+                        <option value="Review" selected>Review</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+                <div className="form-range mb-2">
                     <label> Pryority: </label>
                     <div class="range">
                         <input class="range__input" type="range" min="0" max="1000" step="100" list="number" onChange={event => setRange(event.target.value)} />
@@ -100,29 +142,12 @@ export function Edit(props) {
                         </datalist>
                     </div>
                 </div>
-                <div className="mb-1">
-                    <label> 80%: </label>
-                    <input type="text" className="input-edit-table" name="low" value={low} onChange={event => setLow(event.target.value)} />
-                </div>
-                <div className="mb-1">
-                    <label> 100%: </label>
-                    <input type="text" className="input-edit-table" name="medium" value={medium} onChange={event => setMedium(event.target.value)} />
-                </div>
-                <div className="mb-1">
-                    <label> 120%: </label>
-                    <input type="text" className="input-edit-table" name="high" value={high} onChange={event => setHigh(event.target.value)} />
-                </div>
-                <div className="mb-1">
-                    <label> Metric: </label>
-                    <input type="text" className="input-edit-table" name="metric" value={metric} onChange={event => setMetric(event.target.value)} />
-                </div>
-                <div className="mb-1">
-                    <label> Status: </label>
-                    <input type="text" className="input-edit-table" name="status" value={status} onChange={event => setStatus(event.target.value)} />
-                </div>
             </form>
-            <button type="button" onClick={getForm} className="btn btn-success w-25 mr-2 "> Atualizar </button>
-            <button type="button" className="btn btn-secondary w-25 "> Cancelar </button>
+            <div className="row px-3">
+            <button type="button" onClick={getForm} className="btn btn-success col  mr-1"> Atualizar </button>
+            <button type="button" className="btn bg-light col border border-secondary  ml-1 "> Cancelar </button>
+            </div>
+            </div>
         </>
     )
 }

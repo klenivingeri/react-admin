@@ -55,7 +55,7 @@ export function TableTr(props) {
             <td width="7%">
                 {props?.tr.status == 'Approved' ?? (<span className={`badge badge-sm bgc-green-d1 text-white pb-1 px-25`}>{props?.tr.status}</span>)}
 
-                <span className={`badge badge-sm  text-white pb-1 px-25 ${style}`}>{props?.tr.status}</span>
+                <span className={`badge badge-sm text-white pb-1 px-25 ${style}`}>{props?.tr.status}</span>
 
             </td>
             <td width="3%" className="text-right"></td>
