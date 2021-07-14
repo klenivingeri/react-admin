@@ -22,7 +22,7 @@ export function TableTr(props) {
 
     let el = ''
     let active = true
-    const { getGoal, goal } = useContext(GoalContext)
+    const { getGoal } = useContext(GoalContext)
     useEffect(() => {
         el = document.querySelector(".asidebox")
         active = el.classList.contains('show')

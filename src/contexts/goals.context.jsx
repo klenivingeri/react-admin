@@ -4,11 +4,10 @@ export const GoalContext = createContext({})
 
 export const GoalContextProvider = ({ children }) => {
 
-    const [goal, setGoal] = useState({ teste: 'false' })
+    const [goalobj, setGoal] = useState({ teste: 'false' })
     const [goalEdit, setGoalEdit] = useState([])
 
     const getGoalEdit = (data) => {
-        console.log(data)
     }
 
     const getGoal = (data) => {
@@ -19,7 +18,7 @@ export const GoalContextProvider = ({ children }) => {
     }
 
     const goalProviderValue = {
-        goal,
+        goalobj,
         goalEdit,
         getGoal,
         getGoalEdit
