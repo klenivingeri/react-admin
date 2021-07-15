@@ -7,7 +7,7 @@ import { GoalContext } from '../../contexts'
 export function Edit(props) {
     let el = ''
     let tr = ''
-    const { getGoalEdit, goalobj } = useContext(GoalContext)
+    const { getGoalEdit, goalobj , statusTd } = useContext(GoalContext)
 
     const [goal, setGoal] = useState('')
     const [range, setRange] = useState('')
@@ -40,10 +40,24 @@ export function Edit(props) {
         tr = document.getElementById(`${goalobj.list}`)
     })
 
+    let style = ''
+    if (status == 'Approved') {
+        style = 'bgc-green-d1'
+
+    } else if (status == 'Review') {
+        style = 'bgc-info-d1'
+    }
+    else if (status == 'Pending') {
+        style = 'bgc-warning-d1'
+    }
+    else if (status == 'Rejected') {
+        style = 'bgc-red-d1'
+    }
 
 
     const getForm = () => {
 
+        
         tr.children[2].innerHTML = goal
         tr.children[3].innerHTML = team
         tr.children[4].innerHTML = owner
@@ -53,7 +67,9 @@ export function Edit(props) {
         tr.children[8].innerHTML = high
         tr.children[9].innerHTML = metric
         tr.children[10].children[0].innerHTML = status
-
+        tr.children[10].children[0].classList.remove(statusTd)
+        tr.children[10].children[0].classList.add(style)
+        console.log(statusTd)
         let obj = JSON.stringify({
             list: goalobj.list,
             goal,
@@ -68,20 +84,6 @@ export function Edit(props) {
         })
         
         tr.dataset.set = obj
-
-        let style = ''
-        if (status == 'Approved') {
-            style = 'bgc-green-d1'
-    
-        } else if (status == 'Review') {
-            style = 'bgc-info-d1'
-        }
-        else if (status == 'Pending') {
-            style = 'bgc-warning-d1'
-        }
-        else if (status == 'Rejected') {
-            style = 'bgc-red-d1'
-        }
         
     }
 

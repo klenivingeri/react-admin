@@ -4,6 +4,9 @@ import { GoalContext } from '../../contexts'
 
 
 export function TableTr(props) {
+
+    const { getGoal } = useContext(GoalContext)
+
     let id = props?.tr.list.replaceAll('.', '')
 
     let style = ''
@@ -19,10 +22,11 @@ export function TableTr(props) {
     else if (props?.tr.status == 'Rejected') {
         style = 'bgc-red-d1'
     }
-
+    
     let el = ''
     let active = true
-    const { getGoal } = useContext(GoalContext)
+    
+
     useEffect(() => {
         el = document.querySelector(".asidebox")
         active = el.classList.contains('show')
